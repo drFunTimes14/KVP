@@ -1,0 +1,148 @@
+html {
+    background: rgb(2, 2, 2);
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding-left: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1% 20px;
+    gap: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.image-container img {
+    width: 40%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-container img {
+        width: 50%;
+    }
+}
+
+.content {
+    max-width: 400px;
+}
+
+input {
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Main pic */
+.img-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+#main-img {
+    position: relative;
+    width: 30em;
+    height: auto;
+    opacity: 0.8;
+    border-radius: 20px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.text-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30em;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.text-box h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 200;
+}
+
+#main-img:hover {
+    cursor: pointer;
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+#main-img:hover + .text-box {
+    transform: scale(1.05) translateY(5%); /* Scale and move the text box down by 5% of image's height */
+}
+
+.text-box:hover + #main-img {
+    transform: scale(1.05) translateY(5%);
+}
+
+/* New styles for side-by-side layout */
+.section-container {
+    position: relative;
+    width: 48%; /* Adjust width as needed */
+    margin: 1%; /* Add some spacing between sections */
+    display: inline-block; /* Display sections side by side */
+    cursor: pointer; /* Change cursor to pointer to indicate clickability */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Style for images inside sections */
+.section-container img {
+    width: 30em; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    opacity: 0.8; /* Match your existing design */
+    border-radius: 20px; /* Match your existing design */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Style for text boxes inside sections */
+.section-container .text-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30em; /* Full width of the container */
+    background-color: rgba(0, 0, 0, 0.3); /* Match your existing design */
+    color: white; /* Match your existing design */
+    text-align: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effects for sections */
+.section-container:hover img {
+    opacity: 1; /* Match your existing design */
+    transform: scale(1.05); /* Match your existing design */
+}
+
+.section-container:hover .text-box {
+    transform: scale(1.05) translateY(5%); /* Match your existing design */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 800px) {
+    .section-container {
+        width: 100%; /* Full width on smaller screens */
+        margin: 10px 0; /* Add spacing between stacked sections */
+    }
+}

@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(2, 2, 2);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Increased gap between images */
+    width: 90%;
+    max-width: 800px;
+    justify-content: center; /* Center images */
+    align-items: flex-start;
+}
+
+.gallery img {
+    width: calc(50% - 20px);  /* Two images per row with spacing */
+    height: 300px;            /* Increased height for bigger images */
+    object-fit: cover;        /* Ensures images fill the box without distortion */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 20px;
+}
+
+.lightbox.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-img {
+    max-width: 95vw;
+    max-height: 95vh;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.close {
+    position: absolute;
+    top: 2%;
+    left: 5%;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.download-btn {
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    cursor: pointer;
+    z-index: 10;
+    padding: 10px;
+    display: inline-block;
+}
+
+.download-btn img {
+    width: 40px;  /* Size of the download icon */
+    height: 40px;
+}
+
+@media (max-width: 700px) {
+    .gallery img {
+        width: calc(100% - 20px);  /* One image per row on small screens */
+        height: 250px;             /* Adjusted height for smaller screens */
+    }
+
+    .lightbox-img {
+        max-width: 98vw;
+        max-height: 98vh;
+    }
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="KV, KV paluwas">
+    <meta name="description" content="This website is for our favourite teacher, Pooja Mam.">
+    <meta name="author" content="Class VA">
+    <link rel="stylesheet" href="styles.css">
+    <script src="psswd.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title>The VA Class</title>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="image-container">
+                <img id="logo" src="album/photos/photos/CLASS VA.png" alt="Logo.png">
+            </div>
+            <div class="content">
+                <label for="pin">Enter PIN:</label>
+                <div class="pin-container">
+                    <input type="password" id="pin1" class="pin-input" maxlength="1" oninput="moveFocus(this, 'pin2')" min="0" max="9">
+                    <input type="password" id="pin2" class="pin-input" maxlength="1" oninput="moveFocus(this, 'pin3')" min="0" max="9">
+                    <input type="password" id="pin3" class="pin-input" maxlength="1" oninput="moveFocus(this, 'pin4')" min="0" max="9">
+                    <input type="password" id="pin4" class="pin-input" maxlength="1" oninput="submitPin()" min="0" max="9">
+                </div>
+                <button id="submit">Submit</button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+html {
+    background: rgb(2, 2, 2);
+}
+
+body {
+    margin: 0;
+    padding-left: 10px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1% 20px;
+    gap: 20px;
+    position: relative;
+}
+
+.image-container img {
+    width: 60%;
+    height: auto;
+}
+
+.pin-container {
+    display: flex;
+    gap: 10px;
+}
+
+.pin-input {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #0066cc;
+}
+
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-container img {
+        width: 40%;
+    }
+}
+
+.content {
+    max-width: 400px;
+}
+
+input {
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+#submit {
+    width: 150px;
+    height: 50px;
+    font-size: 18px;
+    border: none;
+    border-radius: 1em;
+    background-color: #2d8ff0;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 5% 0%;
+}
